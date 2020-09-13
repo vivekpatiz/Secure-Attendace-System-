@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Staff Attendance System</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css">
+	<style>
+	h2
+	{
+	background-color:#33CCFF;
+	}
+	</style>
+  </head>
+<body>
+    <div align="center" class="hd">Staff Attendance System</div>
+	<div align="center" class="sd">
+	<a href="/home">Home</a> |
+	<a href="/student">Staff</a> |
+	<a href="/report">Attendance</a> |
+	<a href="/update">Update</a> |
+	<a href="/complaint_view">View</a> |
+	<a href="/logout">Logout</a>
+	</div>
+	
+	
+    
+    <p>&nbsp;</p>
+    <h1 align="center">&nbsp;</h1>
+<h3 align="center">Update Mobile No </h3>
+<form name="form2" method="post" action="/update">
+  <table width="263" height="44" border="0" align="center">
+    <tr>
+      <td>Mobile No: </td>
+      <td><input type="text" name="mobile" value="{{data[3]}}">
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="btn" value="Submit"></td>
+    </tr>
+  </table>
+  {%if msg%}
+  <h2 align="center">{{msg}}</h2>
+  {%endif%}
+</form>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Staff Attendance System</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css">
+</head>
+<script src="../Script/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="" >
+    <div align="center" class="hd">Staff Attendance System</div>
+	<div align="center" class="sd">
+	<a href="/">Home</a> |
+	<a href="/monitor">Daily Attendance </a> |
+	<a href="/login">Login</a> 
+	</div>
+
+<div class="login">
+			<h1>STAFF REPORT</h1>
+
+			<form action="{{ url_for('complaint') }}" method="post"    name="myForm" >
+
+				<input type="text" name="id" placeholder="Staff ID"   ng-model="id" required >
+			
+				<span ng-show="myForm.uname.$touched && myForm.uname.$invalid">The ID is required.</span>
+</p>
+                  
+		
+				<input type="text" name="compl" placeholder="Report" required ng-model="compl" required >
+				<span ng-show="myForm.pass.$touched && myForm.pass.$invalid">The Report is required.</span>
+</p>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Submit" >
+			</form>
+		</div>
+	
+	
+	 <script>
+	
+	var app = angular.module('ngMessagesExample', ['ngMessages']);
+app.controller('nameController', function ($scope) {
+
+  $scope.submitForm = function() {
+    alert('Form submitted - fields passed validation');
+
+  };      
+});
+	
+	</script>
+	
+	<!-- <script>
+          angular.module('myApp', [])
+          .controller('AppController', [function() {
+              var self = this;
+              self.submit = function() {
+                  console.log('Form is submitted with following user', self.user);
+            };
+      }]);
+  </script>
+		
+		<script>
+    var app = angular.module("App",[]);
+
+    app.controller("Controller",function($scope) {
+
+        $scope.Display = function () {
+            $scope.user='Angular';
+        }
+    });
+</script>
+		-->
+</body>
+</html>

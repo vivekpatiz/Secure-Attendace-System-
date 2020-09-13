@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Staff Attendance System</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+    <div align="center" class="hd">Staff Attendance System</div>
+	<div align="center" class="sd">
+	<a href="/home">Home</a> |
+	<a href="/student">Staff</a> |
+	<a href="/report">Attendance</a> |
+	<a href="/update">Update</a> |
+	<a href="/complaint_view">View</a> |
+	<a href="/logout">Logout</a>
+	</div>
+	
+	
+    
+    <p>&nbsp;</p>
+    <h1 align="center">Attendance</h1>
+    <form name="form1" method="post" action="/report">
+      <div align="center">
+        <p>
+          <input type="text" name="rdate" value="{{ rdate }}">
+          <input type="submit" name="btn" value="Submit">
+        </p>
+        <table width="851" border="1" align="center">
+          <tr>
+            <th width="66">ID No.</th>
+            <th width="65">Name</th>
+            <th width="548">Attendance</th>
+            
+            <th width="69">Action</th>
+          </tr>
+          {% for row in data %}
+  <tr>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>
+	{% if row[3]>=1 %}
+	Present
+	{% else %}
+	Absent
+	{% endif %}	</td>
+   
+    <td><a href="/report?act=del&did={{ row[0] }}">Delete</a></td>
+  </tr>
+          {% endfor %}
+        </table>
+        <p>&nbsp;  </p>
+      </div>
+    </form>
+    <h3 align="center">&nbsp;</h3>
+    <p align="center">&nbsp;</p>
+</body>
+</html>

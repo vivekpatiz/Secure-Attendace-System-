@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+<script src="../Script/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+<body ng-app="">
+<form name="adduser" novalidate>
+                    <!-- NAME -->
+                    <div id="name-group" class="form-group-lg">
+                        <input type="text"
+                               ng-required="true"
+                               name="name"
+                               ng-model="userfullName"
+                               class="form-control"                              
+                               placeholder="Full Name">
+                    </div>
+                    <div id="name-group" class="form-group-lg">
+                        <input type="email"
+                               ng-required="true"
+                               name="email"
+                               ng-model="useremail"
+                               class="form-control"                             
+                               placeholder="Email">
+                                            </div>
+                    <div id="name-group" class="form-group-lg">
+                        <input type="password"
+                               ng-required="true"
+                               ng-model="userpassword"
+                               name="password"
+                              ng-minlength="5"
+                               class="form-control "
+                               placeholder="Password atleast 6 character">
+                    </div>
+                    <div id="name-group" class="form-group-lg">
+                        <button type="submit" ng-disabled="!adduser.$valid" ng-click="AddUser()" class="form-control btn btn-info">
+                          Register
+                        </button>
+                    </div>
+                </form>
+</body>
+</html>
